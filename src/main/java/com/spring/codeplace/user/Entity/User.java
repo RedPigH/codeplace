@@ -8,9 +8,9 @@ import java.util.Date;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@Entity
 @Getter
 @Setter
-@Entity
 @Data
 @DynamicInsert
 @Table(name = "CPUSER")
@@ -52,6 +52,9 @@ public class User {
 
     @Column
     private Date lastmodifiedat;
+
+    @Column
+    private Long reportcnt;
 
     public Long getOid() {
         return oid;
@@ -147,5 +150,13 @@ public class User {
 
     public void setLastmodifiedat(Date lastmodifiedat) {
         this.lastmodifiedat = lastmodifiedat;
+    }
+
+    public Long getReportcnt(){
+        return reportcnt;
+    }
+
+    public void setReportcnt(Long reportcnt){
+        this.reportcnt = reportcnt;
     }
 }
