@@ -1,6 +1,7 @@
 package com.spring.codeplace.question.repository;
 
 import com.spring.codeplace.question.entity.Question;
+import com.spring.codeplace.user.Entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,5 +19,7 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
 
     @Query(value = "select tag from CPDOCUMNET", nativeQuery = true)
     List<String> findAllTag();
+
+    Question findByUser(User user);
 
 }

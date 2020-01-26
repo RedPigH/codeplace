@@ -23,7 +23,7 @@
         <label>TITLE: ${Question.title}</label>
     </div>
     <div class="form-group">
-        <label>Writer: ${Question.creatoroid}</label>
+        <label>Writer: ${Question.user.name}</label>
     </div>
     <div class="form-group">
         <label>VIEW: ${Question.viewcnt}</label>

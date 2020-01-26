@@ -7,9 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @Getter
-@Setter
 @Entity
 @Data
 @DynamicInsert
@@ -53,99 +51,20 @@ public class User {
     @Column
     private Date lastmodifiedat;
 
-    public Long getOid() {
-        return oid;
-    }
-
-    public void setOid(Long oid) {
-        this.oid = oid;
-    }
-
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
+    @Builder
+    public User(String account, String password, String name, String nickname, String grade, String gender, String email, String lastloginip, Date lastloginat, Date createdat, Date lastmodifiedat){
         this.account = account;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
         this.nickname = nickname;
-    }
-
-    public String getGrade() {
-        return grade;
-    }
-
-    public void setGrade(String grade) {
         this.grade = grade;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getLastloginip() {
-        return lastloginip;
-    }
-
-    public void setLastloginip(String lastloginip) {
         this.lastloginip = lastloginip;
-    }
-
-    public Date getLastloginat() {
-        return lastloginat;
-    }
-
-    public void setLastloginat(Date lastloginat) {
         this.lastloginat = lastloginat;
-    }
-
-    public Date getCreatedat() {
-        return createdat;
-    }
-
-    public void setCreatedat(Date createdat) {
         this.createdat = createdat;
-    }
-
-    public Date getLastmodifiedat() {
-        return lastmodifiedat;
-    }
-
-    public void setLastmodifiedat(Date lastmodifiedat) {
         this.lastmodifiedat = lastmodifiedat;
     }
+
+
 }
