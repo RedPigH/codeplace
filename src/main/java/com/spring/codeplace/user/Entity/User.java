@@ -1,5 +1,6 @@
 package com.spring.codeplace.user.Entity;
 
+import com.spring.codeplace.enums.SocialType;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 
@@ -51,8 +52,16 @@ public class User {
     @Column
     private Date lastmodifiedat;
 
+    @Column
+    private String principal;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private SocialType socialType;
+
     @Builder
-    public User(String account, String password, String name, String nickname, String grade, String gender, String email, String lastloginip, Date lastloginat, Date createdat, Date lastmodifiedat){
+    public User(String account, String password, String name, String nickname, String grade, String gender, String email, String lastloginip, Date lastloginat, Date createdat, Date lastmodifiedat
+        , String principal, SocialType socialType){
         this.account = account;
         this.password = password;
         this.name = name;
@@ -64,6 +73,8 @@ public class User {
         this.lastloginat = lastloginat;
         this.createdat = createdat;
         this.lastmodifiedat = lastmodifiedat;
+        this.principal = principal;
+        this.socialType = socialType;
     }
 
 
